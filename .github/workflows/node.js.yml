@@ -20,8 +20,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          cd ~/emilmoham.github.io
-          git pull origin master
+          cd ~/emilmoham.io
+          git pull origin main
           npm install --production
           npm run build
           pm2 restart website
