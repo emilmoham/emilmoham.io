@@ -11,6 +11,7 @@ export const NavigationBar = () => (
         <Nav className="mr-auto">
           <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
           <Nav.Item><Nav.Link href="/Archive">Archive</Nav.Link></Nav.Item>
+          <Nav.Item><Nav.Link href="https://github.com/emilmoham">GitHub</Nav.Link></Nav.Item>
         </Nav>
       </Navbar.Collapse>
       </Container>
