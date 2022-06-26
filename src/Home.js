@@ -28,13 +28,13 @@ export const Home = () => {
         <Col lg>
           <h1>The Goal</h1>
           <p>
-            I've thown together this website with the goal of  giving myself a
+            I've thrown together this website with the goal of  giving myself a
             space where I can build up my problem solving, programming, and
             communication skills simultaneously. The idea is to write blog 
             posts where I tackle a coding challenges tracking my initial 
             approach, areas where my knowledge is lacking, problems encountered,
             and lessons learned once the problem is solved. Hopefully I'll be 
-            able to make that intersting. 
+            able to make that interesting. 
           </p> 
         </Col>
         <Col>
@@ -43,7 +43,7 @@ export const Home = () => {
           <p className='blogSummary'>
             {blog.short_description}
             <br/>
-            <a href={"/blog/" + blog.uuid}>Coninue reading...</a>
+            <a href={"/blog/" + blog.uuid}>Continue reading...</a>
           </p>
         </Col>
         <Col>
