@@ -1,4 +1,5 @@
 .jumbotron {
+  background: url('/skyline.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right bottom; 
@@ -6,7 +7,45 @@
 }
 
 .overlay {
+  padding: 0% 10%;
   color: #fefefe;
   text-shadow: 1px 1px #000;
   padding-top: 6em;
+}
+
+.container {
+  padding: 0% 10%;
+  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.content_item_large {
+  flex: 1 100%;
+}
+
+.content_item_small {
+  flex: 1 100%;
+}
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  .content_item_large {
+    flex: 1 100%;
+  }
+  
+  .content_item_small {
+    flex: 1 50%;
+  }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  .content_item_large {
+    flex: 1 0px;
+  }
+  .content_item_small {
+    flex: 1;
+  }
 }
