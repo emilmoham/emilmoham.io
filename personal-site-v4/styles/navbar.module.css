@@ -2,9 +2,9 @@
   background-color: #051103;
   color: #888888;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
   font-size: 20px;
+  padding: 0% 0% 0% 10%;
 }
 
 .icon_container {
@@ -70,8 +70,6 @@
   .nav_list { 
     list-style-type: none;
     width: 100%;
-    text-align: center;
-    padding-top: 10px;
     display: none;
   }
 
@@ -80,7 +78,6 @@
   }
 
   .active {
-    display:  block;
-    
+    display: block;
   }
 }
