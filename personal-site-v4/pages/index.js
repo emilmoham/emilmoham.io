@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+function Home({ latest }) {
   return (
     <div>
       <Head>
@@ -30,12 +30,12 @@ export default function Home() {
         </div>
         <div className={styles.content_item_small}>
           <h1>Latest Blog</h1>
-          {/* <h3 className='blogTitle'><a href={"/blog/" + blog.uuid}>{blog.title}</a></h3>
+          <h3 className='blogTitle'><a href={"/blog/" + latest.uuid}>{latest.title}</a></h3>
           <p className='blogSummary'>
-            {blog.short_description}
+            {latest.short_description}
             <br/>
-            <a href={"/blog/" + blog.uuid}>Coninue reading...</a>
-          </p> */}
+            <a href={"/blog/" + latest.uuid}>Coninue reading...</a>
+          </p> 
         </div>
         <div className={styles.content_item_small}>
           <h1>Planned Features</h1>
@@ -50,3 +50,18 @@ export default function Home() {
     </div>
   )
 }
+
+export async function getStaticProps() {
+  const res = await fetch('https://api.emilmoham.io/blog/list/1');
+  let latest = await res.json();
+  
+  latest = latest[0];
+
+  return {
+    props: {
+      latest,
+    },
+  }
+}
+
+export default Home;
