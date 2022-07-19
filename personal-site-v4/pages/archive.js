@@ -6,7 +6,7 @@ function Archive ({ posts }) {
       {
         posts.map(function(blog, index){
           return (
-            <ArchiveListing props={index} />
+            <ArchiveListing props={blog} key={index} />
           );
         })
       }
