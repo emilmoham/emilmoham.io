@@ -1,0 +1,28 @@
+.ArchiveListing {
+  display: flex;
+  justify-content: left;
+  border: 1px solid black;
+  height: 150px;
+  width: 350px;
+  margin: 10px 10px 0px 10px;
+  padding: 10px;
+  background-color: #CCC;
+}
+
+.ArchiveListing a {
+    text-decoration: none;
+    color: #127FC2;
+}
+
+.left {
+  flex: 2;
+  padding-right: 10px;
+}
+
+.right {
+  flex: 5;
+}
+
+.created {
+  
+}

@@ -1,12 +1,13 @@
 import ArchiveListing from "../components/ArchiveListing";
+import styles from '../styles/Archive.module.css'
 
 function Archive ({ posts }) {
   return (
-    <div>
+    <div className={styles.container}>
       {
         posts.map(function(blog, index){
           return (
-            <ArchiveListing props={blog} key={index} />
+            <ArchiveListing className={styles.item} props={blog} key={index} />
           );
         })
       }

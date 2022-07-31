@@ -36,7 +36,7 @@ function Home({ latest }) {
           <p className={styles.blogSummary}>
             {latest.short_description}
             <br/>
-            <a className={styles.blogLink} href={"/blog/" + latest.uuid}>Coninue reading...</a>
+            <a className={styles.blogLink} href={"/blog/" + latest.uuid}>Continue reading...</a>
           </p> 
         </div>
         <div className={styles.item + ' ' + styles.item_small}>
