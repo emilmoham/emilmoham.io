@@ -11,20 +11,20 @@ function Home({ latest }) {
       </Head>
       <div className={styles.jumbotron}>
         <div className={styles.overlay}>
-          <h1>Hi, I'm Emil.</h1>  
-          <p>I will get better at programming using Cunningham's Law</p>
+          <h1>Hi, I&apos;m Emil.</h1>  
+          <p>I will get better at programming using Cunningham&apos;s Law</p>
         </div>
       </div>
       <div className={styles.container}>
         <div className={styles.item + ' ' + styles.item_large}>
           <h1>The Goal</h1>
             <p>
-              I've thrown together this website with the goal of  giving myself a
+              I&apos;ve thrown together this website with the goal of  giving myself a
               space where I can build up my problem solving, programming, and
               communication skills simultaneously. The idea is to write blog 
               posts where I tackle a coding challenges tracking my initial 
               approach, areas where my knowledge is lacking, problems encountered,
-              and lessons learned once the problem is solved. Hopefully I'll be 
+              and lessons learned once the problem is solved. Hopefully I&apos;ll be 
               able to make that interesting. 
             </p> 
         </div>

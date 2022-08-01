@@ -1,5 +1,6 @@
+import Link from 'next/link';
 import { useState } from 'react';
-import styles from '../styles/navbar.module.css'
+import styles from '../styles/navbar.module.css';
 
 export default function Navbar () {
   const [showMenu, setShowMenu] = useState(false);
@@ -12,14 +13,14 @@ export default function Navbar () {
   return (
     <nav className={styles.navbar}>
       <div className={styles.icon_container}>
-        <a href="/">Emil Mohammed</a>
+        <Link href="/">Emil Mohammed</Link>
       </div>
       <ul className={showMenu ? styles.nav_list + ' ' + styles.active : styles.nav_list}>
         <li className={styles.list_item}>
-          <a href="/">Home</a>
+          <Link href="/">Home</Link>
         </li>
         <li className={styles.list_item}>
-          <a href="/archive">Archive</a>
+          <Link href="/archive">Archive</Link>
         </li>
         <li className={styles.list_item}>
           <a href="https://github.com/emilmoham/">Github</a>
