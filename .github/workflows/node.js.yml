@@ -22,6 +22,6 @@ jobs:
         script: |
           cd ~/emilmoham.io
           git pull origin main
-          npm install --production
+          npm i
           npm run build
-          pm2 restart website
+          pm2 start
