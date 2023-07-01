@@ -11,7 +11,7 @@
 <script>
   export default {
     async asyncData({$content}) {
-      const blogs = await $content("blogs").sortBy("publishOn", "desc").fetch();
+      const blogs = (await $content("blogs").sortBy("publishOn", "desc").fetch()).slice(0,3);
       return {
         blogs
       }
@@ -45,7 +45,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center;
+
+}
+
+@media (min-width: 960px)
+{
+  .container {
+    margin: 0px auto;
+    justify-content: center;
+    max-width: 900px;
+  }
 }
 
 </style>

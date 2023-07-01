@@ -27,13 +27,15 @@
 
 <style scoped>
 .blog-card {
-  margin-top: 2rem;
+  margin: 2rem 10px;
   border: 2px solid var(--border-color);
 
   box-shadow:-1px 1px 1px 0 var(--bg-secondary);
 
   display: flex;
   flex-direction: column;
+
+  max-width: 260px;
 }
 
 .thumbnail {
@@ -65,15 +67,5 @@
 .header  .blog-date {
   margin: 0;
   font-size: 0.7rem;
-}
-
-@media (min-width: 480px) {
-  .blog-card {
-    flex-direction: row;
-  }
-
-  .thumbnail img {
-    height: 100%;
-  }
 }
 </style>

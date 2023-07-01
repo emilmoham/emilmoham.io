@@ -33,6 +33,19 @@
 <style scoped>
 .container {
   padding: 0rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+@media (min-width: 960px)
+{
+  .container {
+    margin: 0px auto;
+    justify-content: center;
+    max-width: 900px;
+  }
 }
 
 </style>
