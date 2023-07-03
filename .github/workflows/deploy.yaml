@@ -43,7 +43,7 @@ jobs:
           username: "${{ secrets.SSH_USERNAME }}"
           key: ${{ secrets.SSH_KEY }}
           source: ${{ github.sha }}.tar.gz
-          target: /var/www/html/artifacts
+          target: /home/emil/artifacts
       - name: Extract archive and create directories
         uses: appleboy/ssh-action@master
         env:
@@ -55,9 +55,9 @@ jobs:
           port: "22"
           envs: GITHUB_SHA
           script: |
-            mkdir -p "./emilmoham.io/${GITHUB_SHA}"
-            tar xzf ./emilmoham.io/${GITHUB_SHA}.tar.gz -C "./emilmoham.io/${GITHUB_SHA}"
-            rm -rf ./emilmoham.io/${GITHUB_SHA}.tar.gz
+            mkdir -p "/home/emil/emilmoham.io/${GITHUB_SHA}"
+            tar xzf /home/emil/artifacts/${GITHUB_SHA}.tar.gz -C "home/emil/emilmoham.io/${GITHUB_SHA}"
+            rm -rf /home/emil/artifacts/${GITHUB_SHA}.tar.gz
 
   # activate-release:
   #   name: "Activate release"
