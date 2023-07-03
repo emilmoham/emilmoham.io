@@ -43,7 +43,7 @@ jobs:
           username: "${{ secrets.SSH_USERNAME }}"
           key: ${{ secrets.SSH_KEY }}
           source: ${{ github.sha }}.tar.gz
-          target: /home/emil/artifacts
+          target: /home/emilmoham/artifacts
       - name: Extract archive and create directories
         uses: appleboy/ssh-action@master
         env:
@@ -55,9 +55,9 @@ jobs:
           port: "22"
           envs: GITHUB_SHA
           script: |
-            mkdir -p "/home/emil/emilmoham.io/${GITHUB_SHA}"
-            tar xzf /home/emil/artifacts/${GITHUB_SHA}.tar.gz -C "home/emil/emilmoham.io/${GITHUB_SHA}"
-            rm -rf /home/emil/artifacts/${GITHUB_SHA}.tar.gz
+            mkdir -p "/home/emilmoham/emilmoham.io/${GITHUB_SHA}"
+            tar xzf /home/emilmoham/artifacts/${GITHUB_SHA}.tar.gz -C "home/emil/emilmoham.io/${GITHUB_SHA}"
+            rm -rf /home/emilmoham/artifacts/${GITHUB_SHA}.tar.gz
 
   # activate-release:
   #   name: "Activate release"
@@ -80,7 +80,6 @@ jobs:
   #           systemctl restart fullstackjack
   #           chown -R www-data:www-data ${RELEASE_PATH}
   #           chown -R root:root  /var/www/html/database
-  #           cd /var/www/html/database && npx prisma migrate deploy
 
   # clean-up:
   #   name: "Clean up old versions"
