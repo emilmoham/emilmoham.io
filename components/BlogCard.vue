@@ -6,7 +6,7 @@
       <div class="detail">
         <div class="header">
           <p class="blog-date">{{ blog.date }}</p>
-          <h1 class="blog-title"><nuxt-link :to="`/blogs/${blog.slug}`">{{ blog.title }}</nuxt-link></h1>
+          <h1 class="blog-title"><NuxtLink :to="`${blog._path}`">{{ blog.title }}</NuxtLink></h1>
         </div>
         <p class="blog-desciption">
           {{ 

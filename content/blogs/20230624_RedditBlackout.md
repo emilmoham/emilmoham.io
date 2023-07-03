@@ -7,6 +7,11 @@ date: June 24th, 2023
 publishOn: 2023-06-25:00:00:00
 tags: ["reddit", "ramble", "stats"]
 ---
+#  The Reddit Protest
+
+![cover-image](https://i.imgur.com/WTDip7l.png)
+
+
 On April 18th, 2023, Reddit announced they would be making some changes to their developer terms of service. The article, titled “[Creating a Healthy Ecosystem for Reddit Data and Reddit Data API Access](https://web.archive.org/web/20230423092724/https://www.Redditinc.com/blog/2023apiupdates),” touched on several topics including the fragmented nature of the previous terms of service, expansion to native moderation tools, and new premium API access tiers.
 
 It was this last point that pushed the developer of Apollo, the largest third party Reddit app for iOS, to make a [post](https://web.archive.org/web/20230602093440/https://www.Reddit.com/r/apolloapp/comments/13ws4w3/had_a_call_with_Reddit_to_discuss_pricing_bad/) saying that he would not be able to continue running his app after having obtained the official figures for his level of API access. He reported that Reddit had given him a figure of $0.24/1000 API requests, which was later confirmed publicly by Reddit in an [AMA](https://web.archive.org/web/20230622174910/https://old.Reddit.com/r/Reddit/comments/145bram/addressing_the_community_about_changes_to_our_api/) held on June 16th. A figure which when multiplied by the 7 BIllion requests his app was making to the API the previous month totaled an outrageous $1.68 Million.

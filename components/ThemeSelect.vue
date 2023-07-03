@@ -1,27 +1,28 @@
 <template>
   <div class="theme-select">
     <div class="button" @click="togglePreference()" >
-      <component :is="`icon-light`" />
+      <LightIcon />
     </div>
   </div>
 </template>
 
 <script>
-  import IconLight from '@/assets/icons/light.svg?inline'
-  
+  import LightIcon from '@/assets/icons/light.svg?component';
+
   export default {
-    components: {
-      IconLight
-    },
     data() {
       return {}
     },
+    components: {
+      LightIcon
+    },
     methods: {
       togglePreference() {
-        if(this.$colorMode.unknown) {
+        const colorMode = useColorMode();
+        if(colorMode.unknown) {
           return;
         }
-        this.$colorMode.preference = this.$colorMode.value === "light" ? "dark" : "light";
+        colorMode.preference = colorMode.value === "light" ? "dark" : "light";
       }
     }
   }

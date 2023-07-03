@@ -3,33 +3,15 @@
     <Navigation />
     <img src="@/assets/images/skyline.jpg" class="banner" />
     <div class="container">
-      <BlogCard v-for="blog in blogs" :key="blog.slug + blog.createdAt" :blog="blog" />
+      <BlogCard v-for="blog in blogs" :blog="blog" />
     </div>
   </main>
 </template>
 
-<script>
-  export default {
-    async asyncData({$content}) {
-      const blogs = (await $content("blogs").sortBy("publishOn", "desc").fetch()).slice(0,3);
-      return {
-        blogs
-      }
-    },
-    head() {
-      return {
-        title: "Emil Mohammed's Blog",
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: 'A place for me to yell into the void'
-          }
-        ]
-      }
-    }
-  }
+<script setup>
+  const { data: blogs } = await useAsyncData('home', () => queryContent('/blogs').limit(3).sort({ publishOn: -1}).find());
 </script>
+
 
 <style>
 .banner {
@@ -41,19 +23,17 @@
 }
 
 .container {
-  padding: 0rem 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-
+  justify-content: center;
 }
 
 @media (min-width: 960px)
 {
   .container {
     margin: 0px auto;
-    justify-content: center;
-    max-width: 900px;
+    max-width: 860px;
+    justify-content: left;
   }
 }
 

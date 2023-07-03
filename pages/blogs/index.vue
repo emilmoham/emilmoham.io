@@ -7,27 +7,8 @@
   </main>
 </template>
 
-<script>
-  export default {
-    async asyncData({$content}) {
-      const blogs = await $content("blogs").sortBy("publishOn", "desc").fetch();
-      return {
-        blogs
-      }
-    },
-    head() {
-      return {
-        title: "Read interesting stories as a nomad",
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: 'Daily and juicy content as you learn, work, and relax. WFH'
-          }
-        ]
-      }
-    }
-  }
+<script setup>
+  const { data: blogs } = await useAsyncData('home', () => queryContent('/blogs').find());
 </script>
 
 <style scoped>

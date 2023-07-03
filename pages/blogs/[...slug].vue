@@ -1,23 +1,11 @@
 <template>
-    <main>
-      <Navigation />
-      <div class="blog">
-        <h1 class="blog-title">{{ note.title }}</h1>
-        <img :src="note.cover_image" />
-        <nuxt-content :document="note" />
-      </div>
-    </main>
+  <main>
+    <Navigation />
+    <div class="blog">
+      <ContentDoc />
+    </div>
+  </main>
 </template>
-<script>
-export default {
-    async asyncData({$content, route}) {
-        const note = await $content(`blogs/${route.params.slug}`).fetch()
-        return {
-            note
-        }
-    }
-}
-</script>
 
 <style>
 .blog {
@@ -55,6 +43,8 @@ export default {
   margin-right: auto;
   max-width: 100%;
 }
+
+
 
 @media (min-width: 1000px) {
   .blog {
