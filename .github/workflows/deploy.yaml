@@ -8,8 +8,7 @@ env:
   NODE_VERSION: 16.17.0
 
 jobs:
-  build:
-    needs: test-application
+  create-deployment-artifacts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +27,7 @@ jobs:
           name: app-artifacts
           path: ${{ github.sha }}.tar.gz
 
-  upload:
+  prepare-release-on-servers:
     needs: create-deployment-artifacts
     name: "Prepare release on INT server"
     runs-on: ubuntu-latest
