@@ -9,6 +9,13 @@
 
 <script setup>
   const { data: blogs } = await useAsyncData('home', () => queryContent('/blogs').find());
+
+  useHead({
+    title: 'Archive | Emil Mohammed',
+    meta: [
+        {name: 'description', content: 'My full archive of blog posts.'},
+    ]
+  });
 </script>
 
 <style scoped>

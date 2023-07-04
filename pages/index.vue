@@ -10,6 +10,13 @@
 
 <script setup>
   const { data: blogs } = await useAsyncData('home', () => queryContent('/blogs').limit(3).sort({ publishOn: -1}).find());
+
+  useHead({
+    title: 'Home | Emil Mohammed',
+    meta: [
+        {name: 'description', content: 'A place for me to yell into the void'},
+    ]
+  });
 </script>
 
 
