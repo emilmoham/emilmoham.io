@@ -66,6 +66,8 @@ jobs:
     steps:
       - name: Activate Release
         uses: appleboy/ssh-action@master
+        env:
+          GITHUB_SHA: ${{ github.sha }}
         with:
           host: ${{ secrets.SSH_HOST }}
           username: "${{ secrets.SSH_USERNAME }}"
@@ -81,6 +83,8 @@ jobs:
             echo "    script: \"./.output/server/index.mjs\"" >> ecosystem.config.js
             echo "  }]" >> ecosystem.config.js
             echo "}" >> ecosystem.config.js
+            pm2 start
+            pm2 save
 
   clean-up:
     name: "Clean up old versions"
@@ -95,7 +99,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: "22"
           script: |
-            cd /home/emilmoham/emilmoham.io && ls -t -1 | tail -n +4 | xargs rm -rf
+            cd /home/emilmoham/emilmoham.io && ls -t -1 | tail -n +2 | xargs rm -rf
             cd /home/emilmoham/artifacts && rm -rf *
       - uses: geekyeggo/delete-artifact@v1
         with:
