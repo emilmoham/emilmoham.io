@@ -73,6 +73,7 @@ jobs:
           username: "${{ secrets.SSH_USERNAME }}"
           key: ${{ secrets.SSH_KEY }}
           port: "22"
+          envs: GITHUB_SHA
           script: |
             pm2 delete website
             cd /home/emilmoham/emilmoham.io/${GITHUB_SHA}
