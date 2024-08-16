@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import Navigation from "@/components/navigation";
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme';
-import { CssBaseline } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +28,9 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           {nav}
-          {children}
+          <Container maxWidth="xl" sx={{mt: 1}}>
+            {children}
+          </Container>
         </ThemeProvider>
       </body>
     </html>
