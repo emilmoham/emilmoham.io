@@ -1,18 +1,39 @@
-import { Box, Container, Paper, Typography } from "@mui/material";
+import BlogCard from "@/components/BlogCard";
+import { getMultipleBlogPostsMetadata } from "@/utils/BlogPosts";
 
-import Image from 'next/image';
+import { Box, Grid, Paper } from "@mui/material";
 
 export default function Home() {
+  const postMetadata = getMultipleBlogPostsMetadata(3);
+
   return (
-    <Container>
+    <Box>
       <Paper
           component="img"
           src='/images/skyline.jpg'
           sx={{
+            marginY: 1,
             width: '100%',
-            backgroundColor: 'white'
+            maxHeight: '300px',
+            objectFit: 'cover'
           }}
       />
-    </Container>
+      <Grid
+        container
+        justifyContent='center'
+      >
+        <Grid
+          item 
+          maxWidth={1024}
+          container 
+          spacing={2}
+          flexGrow={1}
+        >
+          {postMetadata.map((post, index) => {
+            return <BlogCard key={index} post={post} />
+          })}
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
