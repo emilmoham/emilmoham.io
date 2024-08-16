@@ -81,7 +81,12 @@ function Navigation() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">
+                  <Typography
+                    textAlign="center"
+                    sx={{
+                      textDecoration: 'none',
+                    }}
+                  >
                     <Link href={page.link}>
                       {page.label}
                     </Link>
@@ -111,13 +116,11 @@ function Navigation() {
                 key={page.label}
                 href={page.link}
                 onClick={handleCloseNavMenu}
+                color='primary'
                 sx={{ 
                   m: 2,
-                  color: 'white',
                   display: 'block',
-                  ':hover': {
-                     textDecoration: 'none'
-                    } 
+                  textDecoration: 'none',
                 }}
               >
                 {page.label}
