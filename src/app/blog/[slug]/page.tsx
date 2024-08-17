@@ -3,15 +3,18 @@ import { getBlogPostContent, getMultipleBlogPostsMetadata } from '@/utils/BlogPo
 import { Container, Link } from '@mui/material';
 import Markdown from 'markdown-to-jsx';
 
-export const getStaticPaths = (async () => {
+interface Props {
+    params: any
+}
+
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
     const posts = getMultipleBlogPostsMetadata();
-    return {
-        paths: posts.map((post) => ({ 
-            params: { slug: post.slug }
-        })),
-        fallback: false
-    }
-});
+    return posts.map((post) => ({
+        slug: post.slug
+    })); 
+}
 
 type GenerateMetadataProps = {
     params: { slug: string }
@@ -24,10 +27,6 @@ export async function generateMetadata({ params }: GenerateMetadataProps) {
     return {
         title: `${post.data.title} | Emil Mohammed`
     }
-}
-
-interface Props {
-    params: any
 }
 
 export default function BlogPage(props: Props) {
