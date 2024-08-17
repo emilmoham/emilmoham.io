@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { getMultipleBlogPostsMetadata } from '@/utils/BlogPosts';
 import BlogCard from '@/components/BlogCard';
 
@@ -22,6 +22,7 @@ export default function ArchivePage() {
             return <BlogCard key={index} post={post} />
           })}
         </Grid>
+        <Typography variant="body2">Proof of change</Typography>
       </Grid>
     );
 }
